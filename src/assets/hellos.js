@@ -1,4 +1,4 @@
-const HELLOS = [
+export const HELLOS = [
   'Hello',
   'Bonjour',
   'Hola',

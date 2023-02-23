@@ -1,9 +1,5 @@
 <template>
-  <ul>
-    <li>
-      {{ helloTxt }}
-    </li>
-  </ul>
+  <h2>{{ helloTxt || 'Hello' }}</h2>
 </template>
 
 <script>
@@ -88,7 +84,6 @@ const HELLOS = [
   'Ola',
   'Sain',
   'Salaam',
-  '(Shanghainese):',
   'Vanakkam',
   'Salam',
   'Namaskāra',
@@ -113,7 +108,7 @@ export default {
   name: 'HelloTicker',
   data() {
     return {
-      helloTxt: this.getHello(),
+      helloTxt: 'Hello',
     };
   },
   mounted: function () {
@@ -123,7 +118,7 @@ export default {
   },
   methods: {
     getIndex() {
-      return Math.floor(Math.random() * 100 + 1);
+      return Math.floor(Math.random() * 99 + 1);
     },
     getHello() {
       return HELLOS[this.getIndex()];
@@ -131,3 +126,14 @@ export default {
   },
 };
 </script>
+
+<style>
+html,
+body {
+  background: #363737;
+}
+h2 {
+  color: hotpink;
+  font-size: 66px;
+}
+</style>
